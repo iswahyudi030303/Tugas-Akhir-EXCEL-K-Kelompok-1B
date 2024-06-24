@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelompok 1B - Deteksi Paru</title>
+    <link rel="stylesheet" href="/static/sufeadmin/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/sufeadmin/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/sufeadmin/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/static/sufeadmin/assets/scss/style.css">
+    <link rel="stylesheet" href="/static/sufeadmin/assets/scss/widgets.css">
+    <link href="/static/sufeadmin/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <style>
+        /* Custom styles for tips.html */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .user-area {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .user-area a {
+            color: #555;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .user-area a:hover {
+            text-decoration: underline;
+        }
+
+        .card {
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #007bff;
+        }
+
+        .card-header h4 {
+            margin-bottom: 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .card-body th, .card-body td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .card-body th {
+            background-color: #f2f2f2;
+        }
+
+        .right-panel {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="./"><img src="/static/sufeadmin/images/logo.png" alt="Logo"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ url_for('main') }}"><i class="menu-icon fa fa-image"></i>Image Classification</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('deskripsi') }}"><i class="menu-icon fa fa-info"></i>Image Deskripsi</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('tips') }}"><i class="menu-icon fa fa-lightbulb-o"></i>Tips Pencegahan</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('history') }}"><i class="menu-icon fa fa-history"></i> History</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </aside><!-- /#left-panel -->
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                </div>
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="/index" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header><!-- /header -->
+        <!-- Header-->
+        <div class="content mt-3">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Tips Pencegahan Penyakit Paru-paru</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Jenis Penyakit</th>
+                                        <th>Tips Pencegahan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Cardiomegaly</td>
+                                        <td>
+                                            <ul>
+                                                <li>Mengelola tekanan darah secara teratur.</li>
+                                                <li>Mengikuti diet sehat rendah garam dan lemak.</li>
+                                                <li>Menjaga berat badan ideal.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Normal</td>
+                                        <td>
+                                            <ul>
+                                                <li>Periksa kesehatan paru-paru secara berkala dengan dokter.</li>
+                                                <li>Perhatikan pola pernapasan dan konsultasikan dengan dokter jika ada perubahan yang mencurigakan.</li>
+                                                <li>Hindari paparan asap rokok dan polusi udara.</li>
+                                                <li>Maintain pola makan sehat dengan asupan gizi seimbang dan tinggi serat.</li>
+                                                <li>Aktivitas fisik secara teratur untuk menjaga kondisi paru-paru dan kesehatan tubuh secara keseluruhan.</li>
+                                                <li>Hindari paparan zat-zat berbahaya seperti asap rokok, polusi udara, dan bahan kimia yang berpotensi merusak paru-paru.</li>
+                                                <li>Jaga kebersihan lingkungan sekitar, termasuk ventilasi ruangan, untuk mencegah risiko terpapar oleh alergen atau kuman.</li>
+                                                <li>Minum air yang cukup setiap hari untuk menjaga kelembaban dan elastisitas paru-paru.</li>
+                                                <li>Jaga kesehatan tubuh secara keseluruhan dengan istirahat yang cukup, mengelola stres, dan menghindari kebiasaan yang merugikan kesehatan.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pneumonia</td>
+                                        <td>
+                                            <ul>
+                                                <li>Vaksinasi pneumonia untuk mereka yang rentan.</li>
+                                                <li>Mencuci tangan secara teratur untuk mengurangi risiko infeksi.</li>
+                                                <li>Menghindari kontak dengan orang yang sedang sakit.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pneumothorax</td>
+                                        <td>
+                                            <ul>
+                                                <li>Menghindari aktivitas yang dapat menyebabkan cedera dada, seperti olahraga ekstrem tanpa perlindungan.</li>
+                                                <li>Jika memiliki riwayat pneumothorax, konsultasikan dengan dokter untuk pengelolaan yang tepat.</li>
+                                                <li>Perhatikan gejala seperti nyeri dada yang tiba-tiba atau sesak napas.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Right Panel -->
+
+    <script src="/static/sufeadmin/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="/static/sufeadmin/assets/js/plugins.js"></script>
+    <script src="/static/sufeadmin/assets/js/main.js"></script>
+    <script src="/static/sufeadmin/assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="/static/sufeadmin/assets/js/dashboard.js"></script>
+    <script src="/static/sufeadmin/assets/js/widgets.js"></script>
+    <script src="/static/sufeadmin/assets/js/lib/vector-map/jquery.vmap.js"></script>
+    <script src="/static/sufeadmin/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+    <script src="/static/sufeadmin/assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+    <script src="/static/sufeadmin/assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+
+</body>
+</html>
+

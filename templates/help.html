@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EXCEL-K Help</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        html, body {
+            background-color: #fff;
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 100px; /* Adjusted top margin to accommodate fixed navbar */
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        a {
+            color: #2f8be0;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navbar Styles */
+        .nav {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+            background-color: #fff;
+            box-shadow: 0 19px 38px rgba(0,0,0,0.10);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .nav .links a {
+            margin-right: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .nav .links .mainlink {
+            color: #e0501b;
+        }
+
+        .nav h4 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-left: 25px;
+        }
+
+        .nav .logo img {
+            max-height: 60px;
+        }
+
+        /* Banner Styles */
+        /* Banner */
+
+        .banner{
+            height: 400px;
+            background-color: #ffce63;
+            display: flex;
+            flex-direction: row;
+            padding: 50px;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .bannerText h1{
+            font-size: 3vw;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .bannerText img{
+            width: 10vw;
+            margin-right: 20px;
+        }
+
+        .bannerImg img{
+            width: 20vw;
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            li {
+                font-size: 14px;
+            }
+
+            .nav {
+                flex-direction: column;
+                justify-content: space-around;
+                height: auto;
+                padding: 15px;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .nav h4 {
+                font-size: 18px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .nav .links a {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            /* BANNER */
+
+            .banner{
+                height: auto;
+                padding: 20px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bannerText img{
+                width: 20vw;
+                margin-right: 0px;
+            }
+
+            .bannerText h1{
+                text-align: center;
+                margin: 20px auto;
+            }
+
+            .bannerImg img{
+                width: 52vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="nav">
+        <div class="logo">
+            <img src="/static/sufeadmin/images/logo.png" alt="EXCEL-K">
+        </div>
+        <div class="links">
+            <a href="/index">Home</a>
+            <a href="/help" class="mainlink">Help</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Help - Frequently Asked Questions</h1>
+        
+        <h2>General Questions</h2>
+        <ul>
+            <li><strong>What is EXCEL-K?</strong> - EXCEL-K is a platform that...</li>
+            <li><strong>How do I register?</strong> - To register, go to the <a href="/.">Registration Page</a> and fill out the form.</li>
+            <li><strong>How can I contact support?</strong> - You can reach our support team through the <a href="/contact">Contact Page</a>.</li>
+        </ul>
+        
+        <h2>Lung Health Questions</h2>
+        <ul>
+            <li><strong>How can I prevent lung diseases?</strong> - Here are some tips to maintain lung health:
+                <ul>
+                    <li>Maintain a healthy diet with foods rich in antioxidants and vitamins.</li>
+                    <li>Avoid smoking and exposure to secondhand smoke.</li>
+                    <li>Exercise regularly to improve lung function.</li>
+                    <li>Stay up to date with vaccinations, such as flu and pneumonia vaccines.</li>
+                    <li>Avoid exposure to pollutants and chemicals that can harm lung tissue.</li>
+                </ul>
+            </li>
+            <li><strong>What are common symptoms of lung diseases?</strong> - Symptoms may include coughing, shortness of breath, chest pain, and fatigue. Consult a healthcare professional for proper diagnosis and treatment.</li>
+        </ul>
+        
+        <h2>Account Questions</h2>
+        <ul>
+            <li><strong>How do I reset my password?</strong> - Go to the <a href="/forgot-password">Forgot Password</a> page and follow the instructions.</li>
+            <li><strong>How can I update my profile information?</strong> - Log in to your account and navigate to the profile settings.</li>
+        </ul>
+        
+        <h2>Technical Support</h2>
+        <ul>
+            <li><strong>My account is locked, what should I do?</strong> - Contact support through the <a href="/contact">Contact Page</a> for assistance.</li>
+            <li><strong>Issues with payments or transactions?</strong> - Reach out to our billing team via email at billing@example.com.</li>
+        </ul>
+    </div>
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="bannerText" data-aos="fade-right" data-aos-duration="1000">
+            <h1>Download the EXCEL-K App Today.</h1>
+            <span class="bannerInnerText">Stay Updated and take charge of your respiratory health!</span>
+            <a href="#"><img src="/static/sufeadmin/images/AndroidPNG.png" alt=""></a>
+            <a href="#"><img src="/static/sufeadmin/images/iosPNG.png" alt=""></a>
+        </div>
+        <div class="bannerImg" data-aos="fade-up" data-aos-duration="1000">
+            <img src="/static/sufeadmin/images/MobileApp.png" alt="">
+        </div>
+    </div>
+
+    <!-- JavaScript for Animations (AOS Library) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

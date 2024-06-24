@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About EXCEL-K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        html, body {
+            background-color: #fff;
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1150px; /* Reduced from 1150px to 900px */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 100px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .image-container img {
+            max-width: 30%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navbar Styles */
+        .nav {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+            background-color: #fff;
+            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.1);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .nav .links a {
+            margin-right: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .nav .links .mainlink {
+            color: #e0501b;
+        }
+
+        .nav h4 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-left: 25px;
+        }
+
+        .nav .logo img {
+            max-height: 60px;
+        }
+
+        /* Banner Styles */
+        .banner {
+            height: 400px;
+            background-color: #ffce63;
+            display: flex;
+            flex-direction: row;
+            padding: 50px;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .bannerText h1 {
+            font-size: 3vw;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .bannerText img {
+            width: 10vw;
+            margin-right: 20px;
+        }
+
+        .bannerImg img {
+            width: 20vw;
+        }
+
+        /* Info Section Styles */
+        .infoContainer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .infoSection {
+            margin: 50px 0;
+        }
+
+        .infoHeader h1 {
+            font-size: 2em; /* Reduced from 2.5em to 2em */
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .infoHeader h1 span {
+            color: #e0501b;
+        }
+
+        .infoCards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .cardContent {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .cardContent h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .cardContent p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .cardBtn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #e0501b;
+            color: #fff;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        .cardBtn img {
+            width: 20px;
+            height: auto;
+            margin-left: 10px;
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .nav {
+                flex-direction: column;
+                justify-content: space-around;
+                height: auto;
+                padding: 15px;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .nav h4 {
+                font-size: 18px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .nav .links a {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            /* Adjusted Banner Styles */
+            .banner {
+                height: auto;
+                padding: 20px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bannerText img {
+                width: 20vw;
+                margin-right: 0px;
+            }
+
+            .bannerText h1 {
+                text-align: center;
+                margin: 20px auto;
+            }
+
+            .bannerImg img {
+                width: 52vw;
+            }
+
+            .image-container img {
+                max-width: 250px;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="nav">
+        <div class="logo">
+            <img src="/static/sufeadmin/images/logo.png" alt="EXCEL-K">
+        </div>
+        <div class="links">
+            <a href="/index">Home</a>
+            <a href="/help">Help</a>
+            <a href="/about" class="mainlink">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>About EXCEL-K</h1>
+        <p>
+            EXCEL-K is dedicated to providing information about respiratory health, particularly focusing on lung diseases such as pulmonary disease. Pulmonary disease encompasses a range of conditions affecting the lungs, from chronic obstructive pulmonary disease (COPD) to asthma and lung cancer. Our mission is to educate individuals about the prevention, management, and treatment options available for these conditions.
+        </p>
+    </div>
+
+    <div class="infoContainer">
+        <div class="infoSection">
+            <div class="infoHeader" data-aos="fade-up" data-aos-duration="1000">
+                <h1>Types of <br> <span style="color:#e0501b">Lungs Diseases</span></h1>
+            </div>
+            <div class="infoCards">
+                <div class="card one" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="/static/sufeadmin/images/pneumonia.png" class="cardoneImg" alt="Pneumonia Animation" data-aos="fade-up" data-aos-duration="1100">
+                    <div class="cardbgone"></div>
+                    <div class="cardContent">
+                        <h2>Pneumonia</h2>
+                        <p>Learn the signs and symptoms of pneumonia for early detection and proper management.</p>
+                        <a href="/pneumonia" class="cardBtn">
+                            <img src="/static/sufeadmin/images/next.png" alt="Next Icon" class="cardIcon">
+                        </a>
+                    </div>
+                </div>
+                <div class="card two" data-aos="fade-up" data-aos-duration="1300">
+                    <img src="/static/sufeadmin/images/pneumotorax.png" class="cardtwoImg" alt="Pneumothorax Animation" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="cardbgtwo"></div>
+                    <div class="cardContent">
+                        <h2>Pneumothorax</h2>
+                        <p>Understand the causes and prevention of pneumothorax to maintain lung health.</p>
+                        <a href="/pneumotorax" class="cardBtn">
+                            <img src="/static/sufeadmin/images/next.png" alt="Next Icon" class="cardIcon">
+                        </a>
+                    </div>
+                </div>
+                <div class="card three" data-aos="fade-up" data-aos-duration="1600">
+                    <img src="/static/sufeadmin/images/cardiomegaly.png" class="cardthreeImg" alt="Cardiomegaly Animation" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="cardbgone"></div>
+                    <div class="cardContent">
+                        <h2>Cardiomegaly</h2>
+                        <p>Recognize cardiomegaly and its impact on your respiratory system.</p>
+                        <a href="/cardiomegaly" class="cardBtn">
+                            <img src="/static/sufeadmin/images/next.png" alt="Next Icon" class="cardIcon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="bannerText" data-aos="fade-right" data-aos-duration="1000">
+            <h1>Download the EXCEL-K App Today.</h1>
+            <span class="bannerInnerText">Stay Updated and take charge of your respiratory health!</span>
+            <a href="#"><img src="/static/sufeadmin/images/AndroidPNG.png" alt="Download on Android"></a>
+            <a href="#"><img src="/static/sufeadmin/images/iosPNG.png" alt="Download on iOS"></a>
+        </div>
+        <div class="bannerImg" data-aos="fade-up" data-aos-duration="1000">
+            <img src="/static/sufeadmin/images/MobileApp.png" alt="Mobile App">
+        </div>
+    </div>
+
+    <!-- JavaScript for Animations (AOS Library) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

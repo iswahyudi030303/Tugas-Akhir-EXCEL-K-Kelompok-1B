@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EXCEL-K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html,body{
+            background-color: #fff;
+            font-family: 'Source Sans Pro',sans-serif;
+            overflow-x: hidden !important;
+            margin: 0px !important;
+            padding: 0px !important;
+        }
+
+        *{
+            text-decoration: none !important;
+        }
+
+        .nav{
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px 0 25px;
+            background-color: #fff;
+            box-shadow: 0 19px 38px rgba(0,0,0,0.10);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .nav .links a{
+            margin-right: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .nav .links .mainlink{
+            color: #e0501b;
+        }
+
+        .nav h4{
+            font-size: 22px;
+            font-weight: bold;
+            margin-left: 25px;
+        }
+
+        .nav .logo img {
+    max-height: 80px; /* Adjust the max-height to fit your design */
+}
+
+        /* LANDING CSS */
+
+        .landing{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10vw 0 10vw;
+            height: 100vh;
+        }
+
+        .landingText h1{
+            font-size: 6vw;
+            margin: 0 !important;
+        }
+
+        .landingText h3{
+            margin: 6px !important;
+            font-size: 20px;
+            opacity: 0.3;
+            line-height: 30px;
+        }
+
+        .landingText .btn{
+            width: 120px;
+            margin-top: 30px;
+            padding: 14px 20px 14px 20px;
+            background-color: #2f8be0;
+            border-radius: 45px;
+            text-align: center
+        }
+
+        .landingText .btn a{
+            font-size: 1.2vw;
+            color: #fff;
+        }
+
+        .landingImage img{
+            width: 28vw;
+        }
+
+        /* ABOUT CSS */
+
+        .about{
+            height: 600px;
+            padding: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .aboutText{
+            position: relative;
+            padding: 0 50px;
+            height: inherit;
+        }
+
+        .aboutText h1{
+            position: relative;
+            left: 110px;
+        }
+
+        .aboutText img{
+            width: 10vw;
+            position: absolute;
+            top: 50px;
+        }
+
+        .aboutList{
+            width: 50%;
+        }
+
+        ol{
+            list-style: none;
+            color: #e0501b;
+        }
+
+        ol li{
+            font-size: 34px;
+            position: relative;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ebebeb;
+        }
+
+        li p{
+            font-size: 16px;
+            color: #000;
+            padding-left: 60px;
+            line-height: 30px;
+            opacity: 0.6;
+        }
+
+        li span{
+            position: absolute;
+            line-height: 25px;
+            font-weight: 600;
+        }
+
+        /* INFO_SECTION CSS */
+
+        .infoSection{
+            height: 600px;
+        }
+
+        .infoHeader{
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .infoCards{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 0 40px 0;
+        }
+
+        .infoCards .card{
+            position: relative;
+            height: 360px;
+            width: 350px;
+            background: #fff;
+            box-shadow: 0 10px 22px rgba(0,0,0,0.09), 0 10px 10px rgba(0,0,0,0.09)
+        }
+
+        .infoCards .one .cardoneImg{
+            width: 180px;
+            position: absolute;
+            top: -50px;
+            right: -50px;
+        }
+        .infoCards .two .cardtwoImg{
+            width: 158px;
+            position: absolute;
+            top: -50px;
+            right: -50px;
+        }
+        .infoCards .three .cardthreeImg{
+            width: 200px;
+            position: absolute;
+            top: -50px;
+            right: -50px;
+        }
+
+        .cardbgone{
+            height: 150px;
+            background-color: #ffce63;
+        }
+        .cardbgtwo{
+            height: 150px;
+            background-color: #a1cdff;
+        }
+
+        .cardContent{
+            padding: 0 20px;
+        }
+
+        .cardContent h2{
+            font-weight: 600;
+        }
+
+        .cardContent p{
+            line-height: 30px;
+            opacity: 0.6
+        }
+
+        .cardContent .cardBtn{
+            position: absolute;
+            right: 20px;
+            padding: 10px;
+            background-color: #ededed;
+            width: 25px;
+            height: 20px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all ease-in-out 0.2s;
+        }
+
+        .cardContent .cardBtn:hover{
+            background-color: #2f8be0;
+        }
+
+        .cardContent .cardBtn .cardIcon{
+            position: relative;
+            top:0px;
+            left:0px;
+            width: 16px;
+        }
+
+        /* TEAM SECTION */
+.teamSection {
+    background-color: #f3f3f3;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.teamHeader h1 {
+    margin-bottom: 40px;
+}
+
+.teamMembers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.member {
+    max-width: 200px;
+    text-align: center;
+    margin-bottom: 40px; /* Optional: Adds space between members */
+}
+
+.member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.member h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.member p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+        /* Banner */
+
+        .banner{
+            height: 400px;
+            background-color: #ffce63;
+            display: flex;
+            flex-direction: row;
+            padding: 50px;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .bannerText h1{
+            font-size: 3vw;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .bannerText img{
+            width: 10vw;
+            margin-right: 20px;
+        }
+
+        .bannerImg img{
+            width: 20vw;
+        }
+
+        /* FOOTER CSS */
+
+        .footer{
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .footerlinks a{
+            margin: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+        .footerlinks .mainlink{
+            color: #e0501b;
+        }
+
+        /* RESPONSIVE */
+
+        @media only screen and (max-width: 600px){
+            .nav{
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 20px;
+                height: auto;
+                overflow-y: hidden;
+            }
+
+            .nav h4{
+                font-size: 6vw;
+                margin-top: 10px;
+                margin-bottom: 14px;
+            }
+
+            .nav .links a{
+                margin-right: 25px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            /* LANDING PAGE */
+
+            .landing{
+                flex-direction: column-reverse;
+                height: 750px;
+                align-items: center;
+                justify-content: center;
+                text-align: center
+            }
+
+            .landingText h1{
+                font-size: 6vw;
+                margin: 0 !important;
+            }
+
+            .landingText h3{
+                font-size: 16px;
+            }
+
+            .landingText .btn{
+                margin: 0 auto;
+            }
+
+            .landingText .btn a{
+                font-size: 3vw;
+            }
+
+            .landingImage img{
+                width: 52vw;
+                margin-bottom: 20px;
+            }
+
+            /* ABOUT */
+
+            .about{
+                height: auto;
+                padding: 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .aboutText{
+                padding: 0 50px;
+                height: 100px;
+            }
+
+            .aboutText h1{
+                font-size: 8vw;
+                text-align: center;
+                left: 0;
+            }
+
+            .aboutText img{
+                width: 20vw;
+                position: relative;
+                left: 10px;
+                margin: 0 auto;
+            }
+
+            .aboutList{
+                width: 90%;
+            }
+
+            ol li{
+                font-size: 4vw;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #ebebeb;
+            }
+
+            li p{
+                font-size: 3vw;
+            }
+
+            li span{
+                position: absolute;
+                line-height: 25px;
+                font-weight: 600;
+            }
+
+            /* INFO SECTION */
+
+            .infoSection{
+                height: auto;
+                padding-bottom: 60px;
+            }
+
+            .infoHeader{
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .infoCards{
+                flex-direction: column;
+            }
+
+            .infoCards .card{
+                height: 400px;
+                width: 320px;
+                margin-top: 40px;
+            }
+
+            .infoCards .card img{
+                display: none;
+            }
+
+            /* BANNER */
+
+            .banner{
+                height: auto;
+                padding: 20px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bannerText img{
+                width: 20vw;
+                margin-right: 0px;
+            }
+
+            .bannerText h1{
+                text-align: center;
+                margin: 20px auto;
+            }
+
+            .bannerImg img{
+                width: 52vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <div class="wrapper">
+      <div class="nav">
+        <div class="logo">
+            <img src="/static/sufeadmin/images/logo.png" alt="EXCEL-K.">
+        </div>
+        <div class="links">
+            <a href="/index" class="mainlink">Home</a>
+            <a href="/help">Help</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+        <!-- LANDING PAGE -->
+        <div class="landing">
+          <div class="landingText" data-aos="fade-up">
+              <h1><span class="iconic">Paru Detection</span></h1>
+              <h3><span class="iconic">Let's all work together to understand respiratory diseases better. <br> Learn more about them here.</span></h3>
+              <div class="btn">      
+                    <a href="/main">Check Now</a>
+                </div>
+            </div>
+            <div class="landingImage" data-aos="fade-left">
+                <img src="/static/sufeadmin/images/bg.png" alt="">
+            </div>
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <div class="about">
+            <div class="aboutText" data-aos="fade-right">
+                <img src="/static/sufeadmin/images/doctor-woman-400px.png" alt="">
+                <h1>Why is it important to <br> <span style="color:#2f8be0">Protect Your Lungs?</span> </h1>
+            </div>
+            <div class="aboutList" data-aos="fade-left">
+                <ol>
+                    <li> 
+                        <span>01</span>
+                        <p>Respiratory diseases are a significant global health concern, affecting millions worldwide due to various factors including environmental pollutants and viral infections.</p>
+                    </li>
+                    <li> 
+                        <span>02</span>
+                        <p>These diseases can spread easily, making them highly contagious and potentially dangerous to public health.</p>
+                    </li>
+                    <li> 
+                        <span>03</span>
+                        <p>The best preventive measure is to maintain good respiratory hygiene and avoid exposure to pollutants that can harm the lungs, thus reducing the burden on healthcare systems.</p>
+                    </li>
+                    <li> 
+                        <span>04</span>
+                        <p>Currently, there are treatments available for managing respiratory diseases, but prevention through healthy practices remains crucial.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- INFO SECTION -->
+<!-- <div class="infoSection">
+    <div class="infoHeader" data-aos="fade-up" data-aos-duration="1000">
+        <h1>Langkah Praktis untuk <br> <span style="color:#e0501b">Menjaga Kesehatan Pernapasan.</span> </h1>
+    </div>
+    <div class="infoCards">
+        <div class="card one" data-aos="fade-up" data-aos-duration="1000">
+            <img src="/static/sufeadmin/images/pneumonia.png" class="cardoneImg" alt="Animasi Pneumonia" data-aos="fade-up" data-aos-duration="1100">
+            <div class="cardbgone"></div>
+            <div class="cardContent">
+                <h2>Ketahui Gejala Pneumonia</h2>
+                <p>Pelajari tanda dan gejala pneumonia untuk deteksi dini dan penanganan yang tepat.</p>
+                <a href="#" class="cardBtn">
+                    <img src="/static/sufeadmin/images/next.png" alt="Next Icon" class="cardIcon">
+                </a>
+            </div>
+        </div>
+        <div class="card two" data-aos="fade-up" data-aos-duration="1300">
+            <img src="/static/sufeadmin/images/pneumotorax.png" class="cardtwoImg" alt="Animasi Pneumotoraks" data-aos="fade-up" data-aos-duration="1200">
+            <div class="cardbgtwo"></div>
+            <div class="cardContent">
+                <h2>Waspadai Pneumotoraks</h2>
+                <p>Pahami penyebab dan pencegahan pneumotoraks untuk menjaga kesehatan paru-paru.</p>
+                <a href="#" class="cardBtn">
+                    <img src="/static/sufeadmin/images/next.png" alt="Next Icon" class="cardIcon">
+                </a>
+            </div>
+        </div>
+        <div class="card three" data-aos="fade-up" data-aos-duration="1600">
+            <img src="/static/sufeadmin/images/cardiomegaly.png" class="cardthreeImg" alt="Animasi Kardiomegali" data-aos="fade-up" data-aos-duration="1300">
+            <div class="cardbgone"></div>
+            <div class="cardContent">
+                <h2>Pentingnya Deteksi Kardiomegali</h2>
+                <p>Kenali kondisi kardiomegali dan bagaimana pengaruhnya terhadap sistem pernapasan Anda.</p>
+                <a href="#" class="cardBtn">
+                    <img src="/static/sufeadmin/images/next.png" alt="Next Icon" class="cardIcon">
+                </a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+        <!-- INFO SECTION -->
+        <div class="infoSection">
+            <div class="infoHeader" data-aos="fade-up" data-aos-duration="1000">
+                <h1>Practical Steps to <br> <span style="color:#e0501b">Maintain Respiratory Health.</span> </h1>
+            </div>
+            <div class="infoCards">
+                <div class="card one" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="/static/sufeadmin/images/movie.png" class="cardoneImg" alt="" data-aos="fade-up" data-aos-duration="1100">
+                    <div class="cardbgone"></div>
+                    <div class="cardContent">
+                        <h2>Limit Outdoor Activities</h2>
+                        <p>Reduce outdoor exposure by staying indoors and enjoying indoor activities.</p>
+                        <!-- <a href="#" class="cardBtn">
+                            <img src="/static/sufeadmin/images/next.png" alt="Next Icon" class="cardIcon">
+                        </a> -->
+                    </div>
+                </div>
+                <div class="card two" data-aos="fade-up" data-aos-duration="1300">
+                    <img src="/static/sufeadmin/images/learn.png" class="cardtwoImg" alt="" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="cardbgtwo"></div>
+                    <div class="cardContent">
+                        <h2>Expand Your Knowledge</h2>
+                        <p>Learn new skills or hobbies that support respiratory health.</p>
+                        <!-- <a href="#" class="cardBtn">
+                            <img src="/static/sufeadmin/images/next.png" alt="Next Icon" class="cardIcon">
+                        </a> -->
+                    </div>
+                </div>
+                <div class="card three" data-aos="fade-up" data-aos-duration="1600">
+                    <img src="/static/sufeadmin/images/videocall.png" class="cardthreeImg" alt="" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="cardbgone"></div>
+                    <div class="cardContent">
+                        <h2>Stay Connected</h2>
+                        <p>Maintain social connections through video calls for mental and respiratory well-being.</p>
+                        <!-- <a href="#" class="cardBtn">
+                            <img src="/static/sufeadmin/images/next.png" alt="Next Icon" class="cardIcon">
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TEAM SECTION -->
+
+<!-- Team Section -->
+<div class="teamSection">
+  <div class="teamHeader" data-aos="fade-up">
+      <h1>Our Team EXCEL-K</h1>
+  </div>
+  <div class="teamMembers">
+      <div class="member" data-aos="fade-up" data-aos-duration="1100">
+          <img src="/static/sufeadmin/images/wildan.jpg" alt="Wildan Iswahyudi">
+          <h2>Wildan Iswahyudi</h2>
+          <p>Project Leader and ML Engineer</p>
+      </div>
+      <div class="member" data-aos="fade-up" data-aos-duration="1300">
+          <img src="/static/sufeadmin/images/zulfa.jpg" alt="Zulfa Aulia">
+          <h2>Zulfa Aulia</h2>
+          <p>Model Deployment and UI/UX</p>
+      </div>
+      <div class="member" data-aos="fade-up" data-aos-duration="1500">
+          <img src="/static/sufeadmin/images/rizky.jpg" alt="Rizki Syaifurohman">
+          <h2>Rizki Syaifurohman</h2>
+          <p>Data Researcher</p>
+      </div>
+      <div class="member" data-aos="fade-up" data-aos-duration="1700">
+          <img src="/static/sufeadmin/images/abdan.jpg" alt="Abdan Syakuroh">
+          <h2>Abdan Syakuron</h2>
+          <p>ML Engineer</p>
+      </div>
+      <div class="member" data-aos="fade-up" data-aos-duration="1900">
+          <img src="/static/sufeadmin/images/jilan.jpg" alt="Jilan Alhafidz">
+          <h2>Jilan Alhafidz</h2>
+          <p>ML Ops</p>
+      </div>
+  </div>
+</div>
+
+        <!-- BANNER AND FOOTER -->
+        <div class="banner">
+            <div class="bannerText" data-aos="fade-right" data-aos-duration="1000">
+                <h1>Download the EXCEL-K App Today. <br> <span style="font-size:1.6vw;font-weight:normal" class="bannerInnerText">
+                    Stay Updated and take charge of your respiratory health!
+                </span> </h1>
+                <a href="#"> <img src="/static/sufeadmin/images/AndroidPNG.png" alt=""> </a>
+                <a href="#"> <img src="/static/sufeadmin/images/iosPNG.png" alt=""> </a>
+            </div>
+            <div class="bannerImg" data-aos="fade-up" data-aos-duration="1000">
+                <img src="/static/sufeadmin/images/MobileApp.png" alt="">
+            </div>
+        </div>
+
+        <!-- FOOTER
+        <div class="footer">
+            <div class="footerlinks">
+                <a href="#" class="mainlink">Home</a>
+                <a href="#">Help</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXCEL-K | Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html,body{
+            background-color: #fff;
+            font-family: 'Source Sans Pro',sans-serif;
+            overflow-x: hidden !important;
+            margin: 0px !important;
+            padding: 0px !important;
+        }
+
+        *{
+            text-decoration: none !important;
+        }
+
+        .nav{
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px 0 25px;
+            background-color: #fff;
+            box-shadow: 0 19px 38px rgba(0,0,0,0.10);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .nav .links a{
+            margin-right: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .nav .links .mainlink{
+            color: #e0501b;
+        }
+
+        .nav h4{
+            font-size: 22px;
+            font-weight: bold;
+            margin-left: 25px;
+        }
+
+        .nav .logo img {
+            max-height: 80px; /* Adjust the max-height to fit your design */
+        }
+
+        /* CONTACT SECTION CSS */
+
+        .contactSection{
+            padding: 50px 10vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .contactHeader h1{
+            font-size: 6vw;
+            margin: 0;
+            color: #2f8be0;
+        }
+
+        .contactForm{
+            margin-top: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .formGroup{
+            margin-bottom: 20px;
+        }
+
+        .formGroup label{
+            font-size: 20px;
+            font-weight: 600;
+            color: #000;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .formGroup input, .formGroup textarea{
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ebebeb;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .formGroup textarea{
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .formGroup .btn{
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .formGroup .btn button{
+            padding: 14px 40px;
+            background-color: #2f8be0;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .formGroup .btn button:hover{
+            background-color: #256cad;
+        }
+
+        /* FOOTER CSS */
+
+        .footer{
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            background-color: #2f8be0;
+            color: #fff;
+        }
+
+        .footerlinks a{
+            margin: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footerlinks .mainlink{
+            color: #e0501b;
+        }
+
+        .social-links{
+            margin-top: 20px;
+        }
+
+        .social-links a{
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        /* RESPONSIVE */
+
+        @media only screen and (max-width: 600px){
+            .nav{
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 20px;
+                height: auto;
+                overflow-y: hidden;
+            }
+
+            .nav h4{
+                font-size: 6vw;
+                margin-top: 10px;
+                margin-bottom: 14px;
+            }
+
+            .nav .links a{
+                margin-right: 25px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            /* CONTACT SECTION */
+
+            .contactSection{
+                padding: 20px 5vw;
+            }
+
+            .contactHeader h1{
+                font-size: 8vw;
+            }
+
+            .contactForm{
+                max-width: 90%;
+            }
+
+            .formGroup label{
+                font-size: 16px;
+            }
+
+            .formGroup input, .formGroup textarea{
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .formGroup .btn button{
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+
+            /* FOOTER */
+
+            .footer{
+                height: auto;
+            }
+
+            .footerlinks a{
+                font-size: 14px;
+            }
+
+            .social-links a{
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <div class="wrapper">
+        <div class="nav">
+            <div class="logo">
+                <img src="/static/sufeadmin/images/logo.png" alt="EXCEL-K.">
+            </div>
+            <div class="links">
+                <a href="/index">Home</a>
+                <a href="/help">Help</a>
+                <a href="/about">About</a>
+                <a href="/contact" class="mainlink">Contact</a>
+            </div>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <div class="contactSection">
+            <div class="contactHeader" data-aos="fade-up">
+                <h1>Contact Us</h1>
+            </div>
+            <div class="contactForm" data-aos="fade-up" data-aos-delay="100">
+                <form action="#" method="POST">
+                    <div class="formGroup">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="formGroup">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="formGroup">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="formGroup btn">
+                        <button type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <!-- <div class="footer">
+            <div class="footerlinks">
+                <a href="/index">Home</a>
+                <a href="/help">Help</a>
+                <a href="/about">About</a>
+                <a href="/contact" class="mainlink">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/your-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/your-facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/your-whatsapp-number" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <!-- Tambahkan tautan sosial media lainnya jika diperlukan -->
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
